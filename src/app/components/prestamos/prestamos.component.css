@@ -1,0 +1,25 @@
+.titulo{
+  text-align: center;
+}
+
+table {
+    width: 90%;
+  }
+  
+  .example-container {
+    height: 270px;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }

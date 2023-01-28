@@ -1,0 +1,24 @@
+<section class="principal">
+  <mat-card class="cardAdd">
+    <mat-card-header>
+      <h1>Ingresa el Prestamo</h1>
+    </mat-card-header>
+    <form [formGroup]="FormularioPrestamo" (ngSubmit)="addPrestamo()">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Monto del Prestamo</mat-label>
+        <input matInput type="number" requerired class="example-right-align" placeholder="0" formControlName="cantidad">
+        <span matTextPrefix>$&nbsp;</span>
+        <span matTextSuffix>.00</span>
+      </mat-form-field>
+      <br>
+      <mat-card-footer>
+        <button mat-raised-button color="primary" type="submit">Guardar</button>
+        <button mat-raised-button color="warn" routerLink="">Cancelar</button>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</section>
