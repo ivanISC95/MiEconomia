@@ -21,7 +21,8 @@ export class AddPrestamoComponent {
       cantidad:[''],
       nombre:[''],
       fechaPrestamo:[''],
-      estatus : "Debe"
+      estatus : "Debe",
+      descripcion:['']
     })
   }
 

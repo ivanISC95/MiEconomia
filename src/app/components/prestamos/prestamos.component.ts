@@ -18,7 +18,7 @@ import { delay } from 'rxjs';
 export class PrestamosComponent {
   Prestamos: any;
   ipretamosLocales : iPrestamos[];
-  displayedColumns: string[] = ['id', 'nombre', 'cantidad', 'fechaPrestamo', 'estatus', 'fechaPago'];
+  displayedColumns: string[] = ['id', 'nombre', 'cantidad', 'fechaPrestamo', 'estatus', 'descripcion'];
   dataSource!: MatTableDataSource<iPrestamos>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

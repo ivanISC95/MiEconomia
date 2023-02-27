@@ -7,4 +7,5 @@ export interface iPrestamos{
     fechaPago:string;
     estilo:string;
     buttonEstado:string;
+    descripcion:string;
 }
