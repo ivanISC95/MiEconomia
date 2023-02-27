@@ -31,7 +31,7 @@
           <ng-container matColumnDef="estatus">
             <th mat-header-cell *matHeaderCellDef> estatus </th>
             <td mat-cell *matCellDef="let element">  
-              <button mat-raised-button color="warn" [disabled]="element.buttonEstado" (click)="prestamoPagado(element.id)">{{element.estatus}}</button>
+              <button mat-raised-button color="warn" [disabled]="element.buttonEstado" (click)="prestamoPagado(element)">{{element.estatus}}</button>
             </td>            
           </ng-container>
           <ng-container matColumnDef="fechaPago">

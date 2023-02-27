@@ -14,8 +14,10 @@ export class BalanceComponent {
   constructor(private crudService:CrudService){}
 
   ngOnInit():void{
+    /* datos de servidor mysql
     this.crudService.vAhorrosTotales().subscribe(resp => {this.Ahorros = resp});  
     this.crudService.vPrestamosDebe().subscribe(resp => {this.PrestamosDebe = resp});
     this.crudService.vCantidades().subscribe(resp => {this.Cantidades = resp});
+    */
   }
 }

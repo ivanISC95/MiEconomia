@@ -1,5 +1,5 @@
-export interface iPrestamos{
-    id:string;
+export interface iPrestamos{    
+    id:number;
     nombre:string;
     cantidad:number;
     fechaPrestamo:string;

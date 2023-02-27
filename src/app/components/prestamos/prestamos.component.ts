@@ -3,6 +3,8 @@ import { CrudService } from 'src/app/service/crud.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { iPrestamos } from 'src/app/service/iPrestamos';
+import { Router } from '@angular/router';
+import { delay } from 'rxjs';
 /**
  * @title Basic use of `<table mat-table>`
  */
@@ -15,20 +17,32 @@ import { iPrestamos } from 'src/app/service/iPrestamos';
 
 export class PrestamosComponent {
   Prestamos: any;
+  ipretamosLocales : iPrestamos[];
   displayedColumns: string[] = ['id', 'nombre', 'cantidad', 'fechaPrestamo', 'estatus', 'fechaPago'];
   dataSource!: MatTableDataSource<iPrestamos>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private crudService: CrudService) { }
+  constructor(
+    private crudService: CrudService,
+    private router : Router
+    ) {
+    this.ipretamosLocales = [];
+   }
 
 
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // Metodos de conexion para datos locales]
+    this.ipretamosLocales = this.crudService.getPrestamosLocales();
+    this.dataSource = new MatTableDataSource(this.ipretamosLocales);
+    this.dataSource.paginator = this.paginator;
+    /* Metodos de conexion para datos en servidor
     this.crudService.vPrestamos().subscribe(resp => {
       this.Prestamos = resp;
       this.dataSource = new MatTableDataSource(this.Prestamos);
       this.dataSource.paginator = this.paginator;
     });
+    */
   }
 
 
@@ -36,7 +50,8 @@ export class PrestamosComponent {
     this.dataSource.filter = filterVale.trim().toLowerCase();
   }
 
-  prestamoPagado(id:any) {
+  prestamoPagado(id:iPrestamos) {
+    /* metodo para datos en servidor MySQL
     if (window.confirm("Prestamo pagado ? ")) {
       const data = { id: id };
       this.crudService.editPrestamo(data).subscribe((resp) => {
@@ -49,6 +64,12 @@ export class PrestamosComponent {
         }
       });
     }
+    */   
+   if(window.confirm("Prestamo pagado ?")){
+    this.crudService.deletePrestamosLocales(id);
+    delay(300);  
+    this.router.navigateByUrl("");
+   }
   }
 
 }
