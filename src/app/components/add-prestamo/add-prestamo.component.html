@@ -1,5 +1,5 @@
 <section class="principal">
-  <mat-card class="cardAdd">
+  <mat-card >
     <mat-card-header>
       <h1>Ingresa el Prestamo</h1>
     </mat-card-header>
@@ -8,6 +8,12 @@
         <mat-label>Nombre</mat-label>
         <input matInput formControlName="nombre" required>
       </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha del prestamo</mat-label>
+        <input type="date" matInput formControlName="fechaPrestamo" required>
+      </mat-form-field>
+      <br>
       <mat-form-field appearance="fill" floatLabel="always">
         <mat-label>Monto del Prestamo</mat-label>
         <input matInput type="number" requerired class="example-right-align" placeholder="0" formControlName="cantidad">

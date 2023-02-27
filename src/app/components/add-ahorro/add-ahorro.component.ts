@@ -22,22 +22,7 @@ export class AddAhorroComponent {
   }
 
   addAhorro() {
-    /*
-    let {cantidad1} = this.formularioAhorro.value;
-    if (cantidad1 == '') {
-      alert('Campo vacio, inserte una cantidad')
-    } else {
-      if (window.confirm("Seguro de añadir el Ahorro ?")) {
-        this.crudService.spAhorro(this.formularioAhorro.value).subscribe(resp => {
-          if (resp.affectedRows == 1) {
-            this.routeador.navigateByUrl('');
-          } else {
-            alert("Error de conexión o datos invalidos!");
-          }
-        });
-      }
-    }
-    */
+    
     if (window.confirm("Seguro de añadir el Ahorro ?")) {
       this.crudService.spAhorro(this.formularioAhorro.value).subscribe(resp => {
         if (resp.affectedRows == 1) {
