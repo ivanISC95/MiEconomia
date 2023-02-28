@@ -1,10 +1,16 @@
 <hr>
 <div class="balance">
-    <h1>Balance de datos</h1>
     <mat-card *ngFor="let i of Ahorros;let iControl = index">
         <mat-card-content>Ahorros Totales: $ {{i.monto}} </mat-card-content>
     </mat-card>
     <mat-card *ngFor="let i of PrestamosDebe;let iControl = index">
         <mat-card-content>Prestamos Pendientes : ${{i.cantidadDebe}} </mat-card-content>
     </mat-card>
+</div>
+<br>
+<div class="balance">
+    <h1>Balance de datos</h1>
+    <mat-card >
+        <mat-card-content>Ahorros Totales: $ {{this.iahorro}} </mat-card-content>
+    </mat-card>   
 </div>

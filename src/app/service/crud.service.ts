@@ -3,19 +3,20 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Prestamos } from './Prestamos';
 import { iPrestamos } from './iPrestamos';
-
+import { iAhorros } from './iAhorros';
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
   iprestamos : iPrestamos[]; 
+  iahorros : iAhorros[];
 
   // ******************************************************************************************************** 
   //API: string = 'http://localhost:8080/prestamos/data.php'; // API PHP
   API: string = 'http://localhost:4000/'; // API EXPRESS & NODEJS
   constructor(private clientService:HttpClient) { 
     this.iprestamos = [];    
-     
+    this.iahorros = [];
   }
   // Metodos para datos de forma local
   getPrestamosLocales(){
@@ -45,6 +46,29 @@ export class CrudService {
         localStorage.setItem("iprestamos",JSON.stringify(this.iprestamos));
       }
     }
+  }
+  addAhorroLocal(data:iAhorros){
+    this.iahorros.push(data);
+    let datas : iAhorros[] = [];
+    if(localStorage.getItem('ahorro') === null){
+      datas.push(data);
+      localStorage.setItem('ahorro',JSON.stringify(datas));
+    }else{
+      datas = JSON.parse(localStorage.getItem('ahorro') || '[]');
+      /*
+      console.log(data);
+      console.log(datas);      
+      console.log(data.ahorro+datas[0].ahorro);  */
+      localStorage.setItem('ahorro',JSON.stringify(data.ahorro+datas[0].ahorro));
+    }
+  }
+  getAhorroLocal(){
+    if(localStorage.getItem('ahorro') === null){
+      return this.iahorros;
+    }else{
+      this.iahorros = JSON.parse(localStorage.getItem("ahorro") || "[]");
+      return this.iahorros;
+    }  
   }
   // Ver TODOS los prestamos
   vPrestamos(){

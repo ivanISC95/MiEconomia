@@ -6,7 +6,7 @@
     <form [formGroup]="formularioAhorro" (ngSubmit)="addAhorro()">
       <mat-form-field appearance="fill" floatLabel="always">
         <mat-label>Ingesa el Ahorro</mat-label>
-        <input matInput type="number" formControlName="cantidad" class="example-right-align" placeholder="0" required>
+        <input matInput type="number" formControlName="ahorro" class="example-right-align" placeholder="0" required>
         <span matTextPrefix>$&nbsp;</span>
         <span matTextSuffix>.00</span>
       </mat-form-field>
