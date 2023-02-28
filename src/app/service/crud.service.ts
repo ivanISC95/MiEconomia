@@ -48,18 +48,14 @@ export class CrudService {
     }
   }
   addAhorroLocal(data:iAhorros){
-    this.iahorros.push(data);
+    this.iahorros.push(data);    
     let datas : iAhorros[] = [];
     if(localStorage.getItem('ahorro') === null){
       datas.push(data);
       localStorage.setItem('ahorro',JSON.stringify(datas));
     }else{
-      datas = JSON.parse(localStorage.getItem('ahorro') || '[]');
-      /*
-      console.log(data);
-      console.log(datas);      
-      console.log(data.ahorro+datas[0].ahorro);  */
-      localStorage.setItem('ahorro',JSON.stringify(data.ahorro+datas[0].ahorro));
+      datas = JSON.parse(localStorage.getItem('ahorro') || '[]');                     
+      localStorage.setItem('ahorro',JSON.stringify([{"ahorro":data.ahorro+datas[0].ahorro}]));
     }
   }
   getAhorroLocal(){

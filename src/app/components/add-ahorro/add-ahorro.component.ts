@@ -11,12 +11,12 @@ import { delay } from 'rxjs';
 })
 export class AddAhorroComponent {
   formularioAhorro: FormGroup;
-  router: any;
+  
 
   constructor(
     public formulario: FormBuilder,
     private crudService: CrudService,
-    private routeador: Router
+    private router: Router
   ) {
     this.formularioAhorro = this.formulario.group({
       ahorro: ['']
@@ -26,9 +26,8 @@ export class AddAhorroComponent {
   addAhorro() {
     
     if (window.confirm("Seguro de añadir el Ahorro ?")) {
-      this.crudService.addAhorroLocal(this.formularioAhorro.value);
-      delay(300);  
-      this.router.navigateByUrl("");
+      this.crudService.addAhorroLocal(this.formularioAhorro.value);            
+      this.router.navigateByUrl("");      
       /* Metodo para agegar un ahorro en bdd externa
       this.crudService.spAhorro(this.formularioAhorro.value).subscribe(resp => {
         if (resp.affectedRows == 1) {
