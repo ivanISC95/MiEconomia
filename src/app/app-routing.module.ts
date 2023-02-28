@@ -7,14 +7,15 @@ import { BalanceComponent } from './components/balance/balance.component';
 import { DatatabledemoComponent } from './components/datatabledemo/datatabledemo.component';
 import { HomeComponent } from './components/home/home.component';
 import { PrestamosComponent } from './components/prestamos/prestamos.component';
-
+import { AddGastoComponent } from './components/add-gasto/add-gasto.component';
 const routes: Routes = [
   {path:"" , component: HomeComponent},
   {path:"balance" , component: BalanceComponent},
   {path:"prestamos" , component: PrestamosComponent},
   {path:"datatable" , component: DatatabledemoComponent},
   {path: "addAhorro", component: AddAhorroComponent},
-  {path: "addPrestamo" , component: AddPrestamoComponent}
+  {path: "addPrestamo" , component: AddPrestamoComponent},
+  {path: "addGasto" , component: AddGastoComponent}
 ];
 
 @NgModule({

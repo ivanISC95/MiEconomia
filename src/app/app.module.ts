@@ -22,6 +22,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import { AddAhorroComponent } from './components/add-ahorro/add-ahorro.component';
 import { AddPrestamoComponent } from './components/add-prestamo/add-prestamo.component';
+import { AddGastoComponent } from './components/add-gasto/add-gasto.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AddPrestamoComponent } from './components/add-prestamo/add-prestamo.com
     PrestamosComponent,
     BalanceComponent,
     AddAhorroComponent,
-    AddPrestamoComponent
+    AddPrestamoComponent,
+    AddGastoComponent
   ],
   imports: [
     BrowserModule,
