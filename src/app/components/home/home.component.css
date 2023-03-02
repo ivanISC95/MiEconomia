@@ -1,5 +1,18 @@
 .principal{
     display: grid;
     place-items: center;
-    padding: 15px;    
+    padding: 15px; 
+    height: 100%;
+}
+
+section{
+    background-color: black;
+}
+
+h1,h2,footer{
+    color: aliceblue;
+}
+
+button{
+    border: 2px solid whitesmoke;
 }

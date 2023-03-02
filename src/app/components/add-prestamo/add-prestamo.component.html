@@ -1,10 +1,10 @@
-<section class="principal">
+<section >
   <mat-card >
     <mat-card-header>
       <h1>Ingresa el Prestamo</h1>
     </mat-card-header>
     <form [formGroup]="FormularioPrestamo" (ngSubmit)="addPrestamo()">
-      <mat-form-field appearance="fill">
+      <mat-form-field >
         <mat-label>Nombre</mat-label>
         <input matInput formControlName="nombre" required>
       </mat-form-field>

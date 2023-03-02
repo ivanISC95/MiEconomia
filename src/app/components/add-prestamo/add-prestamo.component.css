@@ -1,9 +1,20 @@
-.principal{
-    display: grid;
-    place-items: center;
-    padding: 15px;    
+section{
+    background-color: black;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    place-items: center;    
+    height: 100%;  
+    width: 100%;  
 }
 
-.cardAdd{
+mat-card,mat-label,input{
+    text-align: center;    
     width: 55%;
+    max-width: 55%;
+    min-width: 50;
+}
+
+mat-form-field{
+    width: 80%;
 }
