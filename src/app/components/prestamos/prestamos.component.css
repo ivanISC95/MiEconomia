@@ -1,5 +1,5 @@
   .example-container {
-    height: 270px;
+    height: 300px;
     max-width: 100%;
     overflow: auto;
     
@@ -25,8 +25,7 @@
     width: 100%;  
 }
 
-mat-card{
-  
+mat-card{  
   width: 55%;
   max-width: 55%;
   min-width: 50;
