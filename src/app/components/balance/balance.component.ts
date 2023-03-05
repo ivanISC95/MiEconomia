@@ -20,7 +20,7 @@ export class BalanceComponent {
 
   ngOnInit():void{
     this.iahorro = this.crudService.getAhorroLocal();    
-    console.log(this.iahorro[0].ahorro);
+    //console.log(this.iahorro[0].ahorro);
     /* datos de servidor mysql
     this.crudService.vAhorrosTotales().subscribe(resp => {this.Ahorros = resp});  
     this.crudService.vPrestamosDebe().subscribe(resp => {this.PrestamosDebe = resp});

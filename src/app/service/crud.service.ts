@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Prestamos } from './Prestamos';
-import { iPrestamos } from './iPrestamos';
+import { iPrestamos,iPrestamos2 } from './iPrestamos';
 import { iAhorros } from './iAhorros';
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,7 @@ export class CrudService {
       return this.iprestamos;
     }else{
       this.iprestamos = JSON.parse(localStorage.getItem("iprestamos") || "[]");
+      console.log(this.iprestamos);
       return this.iprestamos;
     }    
   }

@@ -29,13 +29,13 @@ export class PrestamosComponent {
     this.ipretamosLocales = [];
    }
 
-
+   
 
   ngOnInit() {
     // Metodos de conexion para datos locales]
-    this.ipretamosLocales = this.crudService.getPrestamosLocales();
-    this.dataSource = new MatTableDataSource(this.ipretamosLocales);
-    this.dataSource.paginator = this.paginator;
+    this.Prestamos = this.crudService.getPrestamosLocales();        
+    this.dataSource = new MatTableDataSource(this.Prestamos);
+    
     /* Metodos de conexion para datos en servidor
     this.crudService.vPrestamos().subscribe(resp => {
       this.Prestamos = resp;
@@ -45,6 +45,9 @@ export class PrestamosComponent {
     */
   }
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  } 
 
   applyFilter(filterVale: string) {
     this.dataSource.filter = filterVale.trim().toLowerCase();
