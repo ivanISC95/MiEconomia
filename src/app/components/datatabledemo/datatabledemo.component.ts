@@ -22,8 +22,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
-console.log("aqui 2")
-console.log(ELEMENT_DATA);
+
 /**
  * @title Basic use of `<table mat-table>`
  */

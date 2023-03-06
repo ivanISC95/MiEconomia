@@ -1,4 +1,20 @@
-<p>add-gasto works!</p>
-<section>
-    
-</section>
+<section class="principal">
+    <mat-card class="cardAdd">
+      <mat-card-header>
+        <h1>Gastos</h1>
+      </mat-card-header>
+      <form [formGroup]="formularioGasto" (ngSubmit)="addGasto()">
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Ingesa el Gasto</mat-label>
+          <input matInput type="number" formControlName="gasto" class="example-right-align" placeholder="0" required>
+          <span matTextPrefix>$&nbsp;</span>
+          <span matTextSuffix>.00</span>
+        </mat-form-field>
+        <br>
+        <mat-card-footer>
+          <button mat-raised-button color="primary" type="submit">Guardar</button>
+          <button mat-raised-button color="warn" routerLink="">Cancelar</button>
+        </mat-card-footer>
+      </form>
+    </mat-card>
+  </section>

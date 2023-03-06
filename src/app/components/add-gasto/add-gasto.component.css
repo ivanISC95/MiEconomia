@@ -1,0 +1,14 @@
+.principal{
+    display: grid;
+    place-items: center;
+    padding: 15px;   
+    height: 100%; 
+}
+
+.cardAdd{
+    width: 55%;
+    
+}
+section{
+    background-color: black;
+}

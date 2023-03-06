@@ -2,14 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Prestamos } from './Prestamos';
-import { iPrestamos,iPrestamos2 } from './iPrestamos';
+import { iPrestamos } from './iPrestamos';
 import { iAhorros } from './iAhorros';
+import { iGastos } from './iGastos';
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
   iprestamos : iPrestamos[]; 
   iahorros : iAhorros[];
+  igastos : iGastos[];
 
   // ******************************************************************************************************** 
   //API: string = 'http://localhost:8080/prestamos/data.php'; // API PHP
@@ -17,8 +19,24 @@ export class CrudService {
   constructor(private clientService:HttpClient) { 
     this.iprestamos = [];    
     this.iahorros = [];
+    this.igastos = [];
   }
   // Metodos para datos de forma local
+  addGastoLocal(data:iGastos){
+    this.igastos.push(data);    
+    let datas : iGastos[] = [];
+    let datas2 : iAhorros[] = [];
+    if(localStorage.getItem('gasto') === null){
+      datas.push(data);
+      localStorage.setItem('gasto',JSON.stringify(datas));
+    }else{
+      datas = JSON.parse(localStorage.getItem('gasto') || '[]');                     
+      localStorage.setItem('gasto',JSON.stringify([{"gasto":data.gasto+datas[0].gasto}]));
+      datas2 = JSON.parse(localStorage.getItem('ahorro') || '[]');      
+      localStorage.setItem('ahorro',JSON.stringify([{"ahorro":datas2[0].ahorro - data.gasto}]));
+      console.log(datas2[0].ahorro - data.gasto);
+    }
+  }
   getPrestamosLocales(){
     if(localStorage.getItem('iprestamos') === null){
       return this.iprestamos;
