@@ -33,16 +33,22 @@ export class CrudService {
       datas = JSON.parse(localStorage.getItem('gasto') || '[]');                     
       localStorage.setItem('gasto',JSON.stringify([{"gasto":data.gasto+datas[0].gasto}]));
       datas2 = JSON.parse(localStorage.getItem('ahorro') || '[]');      
-      localStorage.setItem('ahorro',JSON.stringify([{"ahorro":datas2[0].ahorro - data.gasto}]));
-      console.log(datas2[0].ahorro - data.gasto);
+      localStorage.setItem('ahorro',JSON.stringify([{"ahorro":datas2[0].ahorro - data.gasto}]));      
     }
+  }
+  getGastosLocales(){
+    if(localStorage.getItem('gasto') === null){
+      return this.igastos;
+    }else{
+      this.igastos = JSON.parse(localStorage.getItem("gasto") || "[]");      
+      return this.igastos;
+    }    
   }
   getPrestamosLocales(){
     if(localStorage.getItem('iprestamos') === null){
       return this.iprestamos;
     }else{
       this.iprestamos = JSON.parse(localStorage.getItem("iprestamos") || "[]");
-      console.log(this.iprestamos);
       return this.iprestamos;
     }    
   }
